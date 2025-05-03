@@ -153,3 +153,10 @@ footer {
   font-size: 0.9rem;
   color: var(--subtext);
 }
+
+body {
+  background: linear-gradient(120deg, #ffe0f0, #f9d8ff);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
