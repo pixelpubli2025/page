@@ -4,6 +4,12 @@ body {
   margin: 0;
   background: linear-gradient(to right, #fff7f7, #ffe9f3);
   color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: linear-gradient(to right, #1a1a1a, #2b2b2b);
+  color: #f0f0f0;
 }
 
 header {
@@ -12,6 +18,13 @@ header {
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+body.dark-mode header {
+  background-color: #222;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
 }
 
 .logo {
@@ -20,24 +33,55 @@ header {
   margin-right: 15px;
 }
 
+.header-group {
+  display: flex;
+  align-items: center;
+}
+
 .header-text h1 {
   color: #e6007e;
   font-size: 2.8rem;
   margin: 0;
 }
 
-.sub {
+.header-text p.sub {
   font-size: 0.95rem;
   color: #666;
   margin: 0;
 }
 
+body.dark-mode .header-text h1 {
+  color: #ff66c4;
+}
+
+body.dark-mode .header-text p.sub {
+  color: #ccc;
+}
+
 .slogan {
-  text-align: center;
   font-style: italic;
-  margin: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #b3005e;
+  margin-top: 5px;
+}
+
+body.dark-mode .slogan {
+  color: #ff66c4;
+}
+
+.toggle-mode {
+  cursor: pointer;
+  background-color: #e6007e;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .toggle-mode {
+  background-color: #444;
+  color: #fff;
 }
 
 .servicios {
@@ -45,10 +89,18 @@ header {
   padding: 2rem;
 }
 
+body.dark-mode .servicios {
+  background-color: #2d2d2d;
+}
+
 .servicios h2 {
   color: #d1006e;
   text-align: center;
   margin-bottom: 1.5rem;
+}
+
+body.dark-mode .servicios h2 {
+  color: #ff66c4;
 }
 
 .servicios ul {
@@ -69,14 +121,28 @@ header {
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
+body.dark-mode .servicios li {
+  background: #3a3a3a;
+  border-left: 5px solid #ff66c4;
+  box-shadow: 0 1px 3px rgba(255,255,255,0.05);
+}
+
 .contacto {
   background-color: #eaf7ff;
   padding: 2rem;
   text-align: center;
 }
 
+body.dark-mode .contacto {
+  background-color: #222f3e;
+}
+
 .contacto h2 {
   color: #005f99;
+}
+
+body.dark-mode .contacto h2 {
+  color: #66d9ef;
 }
 
 .contacto p {
@@ -89,4 +155,8 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
+}
+
+body.dark-mode footer {
+  background-color: #111;
 }
