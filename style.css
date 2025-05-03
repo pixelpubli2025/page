@@ -43,11 +43,26 @@ header {
   animation: fadeIn 1.2s ease-in-out;
 }
 
-.logo {
-  width: 80px;
-  height: auto;
+.logo-container {
+  display: inline-block;
+  background: radial-gradient(circle at center, #ff0080, #8000ff);
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 0, 128, 0.4);
+  animation: pulseGlow 3s infinite ease-in-out;
   margin-bottom: 1rem;
-  animation: float 3s ease-in-out infinite;
+}
+
+.logo-pixel {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.logo-pixel:hover {
+  transform: scale(1.1);
 }
 
 .header-content h1 {
@@ -140,7 +155,7 @@ body.dark-mode .service-card:hover {
 }
 
 .service-card span {
-  font-size: 3rem;
+  font-size: 3.5rem;
   display: block;
   margin-bottom: 0.5rem;
   animation: float 3s ease-in-out infinite;
@@ -188,7 +203,7 @@ body.dark-mode .contact {
 }
 
 .contact .social a {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: var(--accent);
   transition: transform 0.3s, color 0.3s;
   text-decoration: none;
@@ -228,4 +243,16 @@ footer {
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 0, 128, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+  }
 }
