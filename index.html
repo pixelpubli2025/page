@@ -2,57 +2,60 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PIXEL Publicidad</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="logo_pixel.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PIXEL Publicidad - En Construcción</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="toggle-mode" title="Cambiar modo">🌙</button>
+
   <header>
-    <div class="header-container">
-      <img src="logo_pixel.png" alt="Logo PIXEL" class="logo" />
-      <div class="title-group">
-        <h1 class="title">PIXEL</h1>
-        <p class="subtitle">Publicidad</p>
-        <p class="tagline">Diseño, impresión y creatividad visual</p>
-      </div>
+    <div class="header-content">
+      <h1><span class="logo-cube">🧊</span> PIXEL <span>Publicidad</span></h1>
+      <p class="subtag">Diseño, impresión y creatividad visual</p>
+      <p class="slogan">“Se escribe diseño, se pronuncia PASIÓN”</p>
     </div>
-    <p class="slogan">“Se escribe diseño, se pronuncia PASIÓN”</p>
-    <button id="toggle-mode">Cambiar modo</button>
   </header>
 
   <main>
-    <section class="servicios">
-      <h2>Servicios</h2>
-      <ul class="servicios-lista">
-        <li>🖨️ <strong>Impresión en gran formato</strong></li>
-        <li>🎨 <strong>Branding y asesoría gráfica</strong></li>
-        <li>📋 <strong>Diseño de menús y avisos</strong></li>
-        <li>🖼️ <strong>Fotomontajes profesionales</strong></li>
-        <li>🏁 <strong>Pendones publicitarios</strong></li>
-        <li>🔖 <strong>Stickers y señalización</strong></li>
-      </ul>
+    <section class="construction">
+      <h2>🚧 Sitio en Construcción</h2>
+      <p>Muy pronto podrás explorar todo nuestro portafolio en línea.</p>
     </section>
 
-    <section class="contacto">
-      <h2>Contáctanos</h2>
-      <ul class="contacto-lista">
-        <li>📍 <strong>Dirección:</strong> Cl. 42 Sur #78H-16</li>
-        <li>☎️ <strong>Teléfono fijo:</strong> 601 407 5126</li>
-        <li>📱 <strong>WhatsApp:</strong> 321 933 9525 / 321 401 3128</li>
-        <li>✉️ <strong>Email:</strong> creativospixel@gmail.com / comercialpixel@gmail.com</li>
-      </ul>
+    <section class="services">
+      <h2>✨ Lo que hacemos</h2>
+      <div class="services-grid">
+        <div class="service-card"><span>🖨️</span><p>Impresión en gran formato</p></div>
+        <div class="service-card"><span>🎨</span><p>Branding y asesoría gráfica</p></div>
+        <div class="service-card"><span>📋</span><p>Diseño de menús y avisos</p></div>
+        <div class="service-card"><span>🖼️</span><p>Fotomontajes profesionales</p></div>
+        <div class="service-card"><span>🏁</span><p>Pendones publicitarios</p></div>
+        <div class="service-card"><span>🔖</span><p>Stickers y señalización</p></div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>📞 Contáctanos</h2>
+      <p>📍 Cl. 42 Sur #78H-16</p>
+      <p>☎️ Teléfono fijo: 601 407 5126</p>
+      <p>📱 WhatsApp: 321 933 9525 / 321 401 3128</p>
+      <p>✉️ creativospixel@gmail.com</p>
+      <p>✉️ comercialpixel@gmail.com</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 PIXEL Publicidad. Todos los derechos reservados.</p>
+    © 2025 PIXEL Publicidad — Sitio en construcción
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById('toggle-mode');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
+    const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggleBtn.textContent =
+        document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
   </script>
 </body>
