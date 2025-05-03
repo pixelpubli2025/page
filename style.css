@@ -1,22 +1,22 @@
-/* Estilos generales */
+/* Variables */
 :root {
-  --bg: linear-gradient(to bottom, #fff0f5, #ffffff);
+  --bg: #ffffff;
   --text: #222222;
   --accent: #e6007e;
   --subtext: #666666;
   --card-bg: #f0f0f0;
   --contact-bg: #fff7f7;
-  --highlight: #ffe6f0;
+  --card-glow: rgba(230, 0, 126, 0.4);
 }
 
 body.dark-mode {
-  --bg: linear-gradient(to bottom, #1a1a1a, #121212);
+  --bg: #121212;
   --text: #f5f5f5;
   --accent: #ff2ab2;
   --subtext: #bbbbbb;
-  --card-bg: #2a2a2a;
+  --card-bg: #1e1e1e;
   --contact-bg: #1a1a1a;
-  --highlight: #3a003a;
+  --card-glow: rgba(255, 42, 178, 0.6);
 }
 
 /* Reset */
@@ -28,90 +28,84 @@ body.dark-mode {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
   padding: 1rem;
-  transition: background 0.3s ease, color 0.3s ease;
+  background-image: url("5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Logo con efecto 3D */
+.logo-pixel {
+  width: 120px;
+  transition: transform 1s ease, filter 0.5s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  transform: rotateY(0deg);
+  animation: logoRotateIn 2s ease-out forwards;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+@keyframes logoRotateIn {
+  0% {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 /* Header */
 header {
   text-align: center;
   padding: 2rem 1rem;
-  position: relative;
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-.logo-container {
-  display: inline-block;
-  background: radial-gradient(circle at center, #ff0080, #8000ff);
-  padding: 1rem;
-  border-radius: 50%;
-  box-shadow: 0 0 25px rgba(255, 0, 128, 0.4);
-  animation: pulseGlow 3s infinite ease-in-out;
-  margin-bottom: 1rem;
-}
-
-.logo-pixel {
-  width: 100px;
-  height: auto;
-  border-radius: 50%;
-  animation: float 4s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
-
-.logo-pixel:hover {
-  transform: scale(1.1);
 }
 
 .header-content h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: var(--accent);
-  animation: slideDown 1s ease-out;
 }
 
 .header-content span {
   display: block;
-  font-size: 1.5rem;
-  color: var(--text);
-  animation: slideDown 1.2s ease-out;
-}
-
-.header-content p {
-  color: var(--subtext);
+  font-size: 1.2rem;
   margin-top: 0.5rem;
-  animation: fadeIn 1.5s ease-in-out;
+  color: var(--text);
 }
 
-.slogan {
+.header-content .slogan {
   font-style: italic;
-  font-weight: bold;
-  margin-top: 1rem;
-  animation: fadeIn 1.7s ease-in-out;
+  color: var(--subtext);
+  margin-top: 0.8rem;
 }
 
 #toggle-mode {
   margin-top: 1rem;
-  background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 4px;
   transition: background 0.3s;
 }
 
 #toggle-mode:hover {
-  background: var(--accent);
-  color: #fff;
+  background-color: #cc006a;
 }
 
-/* Section construction */
+/* Construction */
 .construction {
   text-align: center;
   margin: 2rem 0;
-  animation: fadeIn 1s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 /* Services */
@@ -120,139 +114,77 @@ header {
 }
 
 .services h2 {
-  color: var(--accent);
   text-align: center;
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
 .service-card {
   background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 12px;
   text-align: center;
   font-size: 1.1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  animation: fadeIn 0.8s ease-in-out;
-  cursor: default;
-}
-
-body.dark-mode .service-card:hover {
-  background-color: var(--highlight);
-}
-
-.service-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  background-color: var(--highlight);
+  box-shadow: 0 4px 8px var(--card-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card span {
-  font-size: 3.5rem;
+  font-size: 2rem;
   display: block;
   margin-bottom: 0.5rem;
-  animation: float 3s ease-in-out infinite;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--card-glow);
 }
 
 /* Contact */
 .contact {
   background-color: var(--contact-bg);
-  padding: 2.5rem 1rem;
-  margin-top: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 3px 20px rgba(0,0,0,0.15);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fadeIn 1.2s ease-in-out;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+  box-shadow: 0 6px 12px var(--card-glow);
   text-align: center;
-  transition: background-color 0.3s;
-}
-
-body.dark-mode .contact {
-  background-color: var(--highlight);
 }
 
 .contact h2 {
   color: var(--accent);
   margin-bottom: 1rem;
-  font-size: 2rem;
-  animation: slideUp 1.4s ease-out;
 }
 
 .contact p {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  color: var(--text);
-  animation: fadeIn 1.6s ease-in-out;
+  margin: 0.3rem 0;
+  font-size: 1rem;
 }
 
-.contact .social {
-  margin-top: 1.2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  animation: fadeIn 1.8s ease-in-out;
+.social {
+  margin-top: 1rem;
 }
 
-.contact .social a {
-  font-size: 2.2rem;
+.social a {
+  font-size: 1.5rem;
   color: var(--accent);
-  transition: transform 0.3s, color 0.3s;
-  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease;
 }
 
-.contact .social a:hover {
-  transform: scale(1.3);
-  color: #000;
+.social a:hover {
+  transform: scale(1.2);
 }
 
 /* Footer */
 footer {
   text-align: center;
   margin-top: 3rem;
-  padding-top: 1rem;
   font-size: 0.9rem;
   color: var(--subtext);
-}
-
-/* Animaciones */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(255, 0, 128, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
-  }
 }
