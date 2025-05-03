@@ -1,142 +1,155 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-  background: linear-gradient(to right, #ffffff, #f2f2f2);
-  color: #333;
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --accent: #e6007e;
+  --subtext: #666;
+  --card-bg: #fdf3f9;
+  --contact-bg: #fff0fa;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
-.dark-mode {
-  background: linear-gradient(to right, #1e1e1e, #2c2c2c);
-  color: #f5f5f5;
+body.dark-mode {
+  --bg: #121212;
+  --text: #f4f4f4;
+  --accent: #ff2ab2;
+  --subtext: #cccccc;
+  --card-bg: #2a2a2a;
+  --contact-bg: #1d1d1d;
+  --shadow: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 1rem;
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
-  padding: 1rem 0;
-  background-color: #f71c85;
-  color: white;
   text-align: center;
-  animation: fadeInDown 1s ease-out;
+  padding: 2rem 1rem;
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+.header-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  text-align: left;
+.header-content .logo-cube {
+  font-size: 2rem;
+  margin-right: 0.4rem;
 }
 
-.logo {
-  width: 60px;
-  height: auto;
-  animation: fadeIn 1s ease-in;
+.header-content span {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--text);
 }
 
-.title-group {
-  text-align: left;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.title {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.subtitle {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.tagline {
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
+.subtag {
+  margin-top: 0.4rem;
+  color: var(--subtext);
+  font-size: 1rem;
 }
 
 .slogan {
-  margin-top: 0.5rem;
-  font-style: italic;
-  font-weight: bold;
-  animation: fadeIn 2s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-button#toggle-mode {
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: white;
-  border: none;
-  border-radius: 5px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+#toggle-mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
   cursor: pointer;
-  animation: fadeIn 2s ease-in-out;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: all 0.3s ease;
 }
 
-.dark-mode button#toggle-mode {
-  background-color: #444;
-  color: white;
+.construction {
+  text-align: center;
+  margin: 2rem 0;
 }
 
-main {
-  padding: 1.5rem;
+.services {
+  margin: 3rem 0;
+  text-align: center;
 }
 
-.servicios, .contacto {
-  margin-bottom: 2rem;
+.services h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.service-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
   padding: 1rem;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.service-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact {
+  background-color: var(--contact-bg);
+  padding: 2rem;
   border-radius: 10px;
-  animation: fadeIn 1s ease-in;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  text-align: left;
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
-.servicios {
-  background-color: #fcdff1;
+.contact h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
-.dark-mode .servicios {
-  background-color: #432033;
-}
-
-.contacto {
-  background-color: #d8eefe;
-}
-
-.dark-mode .contacto {
-  background-color: #243444;
-}
-
-h2 {
-  border-bottom: 2px solid #999;
-  padding-bottom: 0.5rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
+.contact p {
   margin: 0.5rem 0;
+  color: var(--text);
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #222;
-  color: white;
-  animation: fadeInUp 1s ease-in;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--subtext);
 }
