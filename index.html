@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PIXEL Publicidad - En Construcción</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="logo_pixel.png" type="image/png" />
-  <script src="https://kit.fontawesome.com/a2d9fe9b4d.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome CDN actualizado -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-vpXboU2DxOdE50Pz+7f5O+YqJ6nN1MPZEnDLE+KpH1kEfH+RcvCD3HcoyhT9E8goAWOciWj1CGKw0h6QqPR2eg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -29,44 +29,26 @@
   <section class="services">
     <h2>¿Qué hacemos?</h2>
     <div class="services-grid">
-      <div class="service-card">
-        <span>🖨️</span>
-        <p>Impresión Gran Formato</p>
-      </div>
-      <div class="service-card">
-        <span>🎨</span>
-        <p>Branding y Asesoría Gráfica</p>
-      </div>
-      <div class="service-card">
-        <span>🪧</span>
-        <p>Diseño de Avisos</p>
-      </div>
-      <div class="service-card">
-        <span>📋</span>
-        <p>Diseño para Menús</p>
-      </div>
-      <div class="service-card">
-        <span>🖼️</span>
-        <p>Fotomontajes</p>
-      </div>
-      <div class="service-card">
-        <span>📍</span>
-        <p>Pendones y Stickers</p>
-      </div>
+      <div class="service-card"><span>🖨️</span><p>Impresión Gran Formato</p></div>
+      <div class="service-card"><span>🎨</span><p>Branding y Asesoría Gráfica</p></div>
+      <div class="service-card"><span>🪧</span><p>Diseño de Avisos</p></div>
+      <div class="service-card"><span>📋</span><p>Diseño para Menús</p></div>
+      <div class="service-card"><span>🖼️</span><p>Fotomontajes</p></div>
+      <div class="service-card"><span>📍</span><p>Pendones y Stickers</p></div>
     </div>
   </section>
 
   <section class="contact">
     <h2>Contáctanos</h2>
-    <p>📍 Cl. 42 Sur #78H-16</p>
+    <p>📍 Cl. 42 sur #78h -16</p>
     <p>📞 601 407 5126</p>
     <p>📱 321 933 9525 - 321 401 3128</p>
     <p>✉️ creativospixel@gmail.com</p>
     <p>✉️ direccioncomercial.pixel@gmail.com</p>
     <div class="social">
-      <a href="https://wa.me/573219339525" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/PixelPublicidad" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="mailto:creativospixel@gmail.com"><i class="far fa-envelope"></i></a>
+      <a href="https://wa.me/573219339525" target="_blank"><i class="fab fa-whatsapp fa-bounce"></i></a>
+      <a href="https://www.facebook.com/PixelPublicidad" target="_blank"><i class="fab fa-facebook fa-beat"></i></a>
+      <a href="mailto:creativospixel@gmail.com"><i class="far fa-envelope fa-fade"></i></a>
     </div>
   </section>
 
@@ -75,9 +57,9 @@
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById("toggle-mode");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
+    const toggleBtn = document.getElementById('toggle-mode');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
     });
   </script>
 </body>
