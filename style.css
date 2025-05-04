@@ -1,12 +1,11 @@
-/* Variables */
+/* Variables de color */
 :root {
   --bg: #ffffff;
   --text: #222222;
   --accent: #e6007e;
   --subtext: #666666;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --contact-bg: rgba(255, 255, 255, 0.85);
-  --overlay: rgba(255, 255, 255, 0.7);
+  --card-bg: #f0f0f0;
+  --contact-bg: #fff7f7;
 }
 
 body.dark-mode {
@@ -14,12 +13,11 @@ body.dark-mode {
   --text: #f5f5f5;
   --accent: #ff2ab2;
   --subtext: #bbbbbb;
-  --card-bg: rgba(30, 30, 30, 0.9);
-  --contact-bg: rgba(26, 26, 26, 0.9);
-  --overlay: rgba(0, 0, 0, 0.5);
+  --card-bg: #1e1e1e;
+  --contact-bg: #1a1a1a;
 }
 
-/* Reset y fondo */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -28,21 +26,27 @@ body.dark-mode {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: url('5.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
   padding: 1rem;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Fondo con capa semi-transparente */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: var(--overlay);
-  z-index: -1;
+/* Logo */
+.logo-container {
+  text-align: center;
+}
+
+.logo-pixel {
+  max-width: 150px;
+  animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
 }
 
 /* Header */
@@ -51,142 +55,134 @@ header {
   padding: 2rem 1rem;
 }
 
-.logo-container img {
-  width: 130px;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
-.logo-container img:hover {
-  transform: scale(1.05);
+.header-content h1 {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
-.header-content h1 {
-  font-size: 2.5rem;
-  color: var(--accent);
-}
 .header-content span {
   display: block;
   font-size: 1.3rem;
   color: var(--text);
+  font-weight: bold;
 }
+
 .slogan {
   font-style: italic;
   font-weight: bold;
-  margin-top: 1rem;
   color: var(--subtext);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-/* Toggle */
 #toggle-mode {
-  margin-top: 1rem;
   background: none;
   border: 2px solid var(--accent);
   color: var(--accent);
-  padding: 0.6rem 1.2rem;
-  font-weight: bold;
-  border-radius: 6px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 #toggle-mode:hover {
-  background: var(--accent);
+  background-color: var(--accent);
   color: #fff;
 }
 
 /* Sección construcción */
 .construction {
   text-align: center;
-  background: var(--card-bg);
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 2rem 0;
 }
 
 /* Servicios */
 .services {
   margin: 2rem 0;
 }
+
 .services h2 {
-  text-align: center;
   color: var(--accent);
+  text-align: center;
   margin-bottom: 1rem;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 0 1rem;
+  gap: 1rem;
+  justify-items: center;
 }
 
 .service-card {
-  background: var(--card-bg);
-  padding: 1.5rem;
+  background-color: var(--card-bg);
+  padding: 1rem;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  font-size: 1.1rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.service-card span {
-  font-size: 2.2rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
+
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  background-color: var(--accent);
-  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card span {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover span {
+  transform: rotate(10deg);
 }
 
 /* Contacto */
 .contact {
   background-color: var(--contact-bg);
   padding: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   border-radius: 10px;
   text-align: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
 }
+
 .contact h2 {
   color: var(--accent);
   margin-bottom: 1rem;
 }
+
 .contact p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+  margin: 0.3rem 0;
 }
 
-/* Redes sociales */
-.social {
+.contact .social {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
-.social a {
+
+.contact .social a {
+  font-size: 1.5rem;
   color: var(--accent);
-  margin: 0 0.5rem;
-  font-size: 2rem;
-  transition: transform 0.3s, color 0.3s;
+  transition: transform 0.3s;
 }
-.social a:hover {
+
+.contact .social a:hover {
   transform: scale(1.2);
-  color: #000;
-}
-body.dark-mode .social a:hover {
-  color: #fff;
 }
 
 /* Footer */
 footer {
   text-align: center;
   margin-top: 3rem;
+  padding-top: 1rem;
   font-size: 0.9rem;
   color: var(--subtext);
 }
