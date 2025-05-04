@@ -1,11 +1,12 @@
+/* Variables */
 :root {
   --bg: #ffffff;
   --text: #222222;
   --accent: #e6007e;
   --subtext: #666666;
-  --card-bg: #f0f0f0;
-  --contact-bg: #fff7f7;
-  --highlight: #fff0f5;
+  --card-bg: #f9f9f9;
+  --contact-bg: #fff2f8;
+  --hover-card: #ffe6f0;
 }
 
 body.dark-mode {
@@ -15,9 +16,10 @@ body.dark-mode {
   --subtext: #bbbbbb;
   --card-bg: #1e1e1e;
   --contact-bg: #1a1a1a;
-  --highlight: #2c2c2c;
+  --hover-card: #2c2c2c;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +32,6 @@ body {
   color: var(--text);
   line-height: 1.6;
   padding: 1rem;
-  transition: background 0.3s, color 0.3s;
 }
 
 /* Header */
@@ -40,11 +41,8 @@ header {
 }
 
 .logo-container {
-  display: flex;
-  justify-content: center;
   margin-bottom: 1rem;
 }
-
 .logo-pixel {
   width: 100px;
   height: auto;
@@ -61,18 +59,14 @@ header {
   color: var(--text);
 }
 
-.header-content p {
+.slogan {
+  font-style: italic;
+  font-weight: bold;
   color: var(--subtext);
   margin-top: 0.5rem;
 }
 
-.slogan {
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-/* Toggle button */
+/* Toggle Button */
 #toggle-mode {
   margin-top: 1rem;
   background: none;
@@ -81,19 +75,13 @@ header {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 4px;
-  transition: background 0.3s;
 }
 
-#toggle-mode:hover {
-  background: var(--highlight);
-}
-
-/* Construction section */
+/* Construction Section */
 .construction {
   text-align: center;
   margin: 2rem 0;
 }
-
 .construction img {
   width: 80px;
   margin-bottom: 1rem;
@@ -103,48 +91,37 @@ header {
 .services {
   margin: 2rem 0;
 }
-
 .services h2 {
   color: var(--accent);
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
-
 .service-card {
   background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  width: 100%;
-  max-width: 300px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 .service-card span {
-  display: block;
   font-size: 2rem;
+  display: block;
   margin-bottom: 0.5rem;
 }
-
 .service-card strong {
   display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
 }
-
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  background-color: var(--highlight);
+  transform: scale(1.05);
+  background-color: var(--hover-card);
 }
 
 /* Contact */
@@ -152,40 +129,40 @@ header {
   background-color: var(--contact-bg);
   padding: 2rem;
   margin-top: 2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  transition: background 0.3s;
 }
-
 .contact h2 {
   color: var(--accent);
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
-
-.contact p {
-  margin: 0.3rem 0;
+.contact-details p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
 }
-
+.contact-details strong {
+  font-weight: bold;
+}
 .social {
   margin-top: 1rem;
 }
-
 .social a {
-  margin: 0 0.5rem;
   color: var(--accent);
   font-size: 1.5rem;
-  transition: transform 0.3s;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-
 .social a:hover {
-  transform: scale(1.2);
+  color: var(--text);
 }
 
 /* Footer */
 footer {
   text-align: center;
   margin-top: 3rem;
-  padding-top: 1rem;
+  padding: 1rem 0;
   font-size: 0.9rem;
   color: var(--subtext);
 }
