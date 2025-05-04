@@ -2,12 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PIXEL Publicidad - En Construcción</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="logo_pixel.png" type="image/png" />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" href="logo_pixel.png" />
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -23,19 +22,44 @@
 
   <main>
     <section class="construction">
-      <h2>🚧 Estamos construyendo algo increíble...</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/2913/2913462.png" alt="En construcción" />
+      <h2>🚧 Sitio web en construcción</h2>
       <p>Muy pronto podrás conocer todo nuestro portafolio en línea.</p>
     </section>
 
     <section class="services">
       <h2>🧩 Lo que hacemos</h2>
       <div class="services-grid">
-        <div class="service-card"><span>🖨️</span> Impresión en gran formato</div>
-        <div class="service-card"><span>🎨</span> Branding y asesoría gráfica</div>
-        <div class="service-card"><span>📋</span> Diseño de menús y avisos</div>
-        <div class="service-card"><span>🖼️</span> Fotomontajes profesionales</div>
-        <div class="service-card"><span>🏁</span> Pendones publicitarios</div>
-        <div class="service-card"><span>🔖</span> Stickers y señalización</div>
+        <div class="service-card">
+          <span>🖨️</span>
+          <strong>Impresión en gran formato</strong>
+          <p>Impresión de alta calidad para vallas, vinilos y afiches.</p>
+        </div>
+        <div class="service-card">
+          <span>🎨</span>
+          <strong>Branding y asesoría gráfica</strong>
+          <p>Desarrollamos la identidad visual de tu marca con impacto.</p>
+        </div>
+        <div class="service-card">
+          <span>📋</span>
+          <strong>Diseño de menús y avisos</strong>
+          <p>Diseños creativos y funcionales para tu negocio.</p>
+        </div>
+        <div class="service-card">
+          <span>🖼️</span>
+          <strong>Fotomontajes profesionales</strong>
+          <p>Edición y composición de imágenes de forma profesional.</p>
+        </div>
+        <div class="service-card">
+          <span>🏁</span>
+          <strong>Pendones publicitarios</strong>
+          <p>Producción de pendones para campañas y eventos.</p>
+        </div>
+        <div class="service-card">
+          <span>🔖</span>
+          <strong>Stickers y señalización</strong>
+          <p>Etiquetas y señales para interiores y exteriores.</p>
+        </div>
       </div>
     </section>
 
@@ -44,11 +68,11 @@
       <p>📍 Cl. 42 Sur #78H-16</p>
       <p>☎️ Teléfono fijo: 601 407 5126</p>
       <p>📱 WhatsApp: 321 933 9525 / 321 401 3128</p>
-      <p>✉️ creativospixel@gmail.com</p>
-      <p>✉️ comercialpixel@gmail.com</p>
+      <p><i class="fa-solid fa-envelope"></i> creativospixel@gmail.com</p>
+      <p><i class="fa-solid fa-envelope"></i> comercialpixel@gmail.com</p>
       <div class="social">
-        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:creativospixel@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:creativospixel@gmail.com" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </section>
   </main>
@@ -61,9 +85,7 @@
     const toggleBtn = document.getElementById("toggle-mode");
     toggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
-      toggleBtn.textContent = document.body.classList.contains("dark-mode") 
-        ? "☀️ Modo claro" 
-        : "🌙 Modo oscuro";
+      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️ Modo claro" : "🌙 Modo oscuro";
     });
   </script>
 </body>
