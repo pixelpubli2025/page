@@ -39,6 +39,7 @@ body {
 .logo-pixel {
   max-width: 120px;
   margin-bottom: 1rem;
+  border-radius: 60px;
 }
 
 header {
