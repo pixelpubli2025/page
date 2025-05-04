@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PIXEL Publicidad - En Construcción</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Font Awesome CDN actualizado -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="logo_pixel.png" type="image/png" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
@@ -14,52 +15,55 @@
       <img src="logo_pixel.png" alt="Logo PIXEL" class="logo-pixel" />
     </div>
     <div class="header-content">
-      <h1>PIXEL Publicidad</h1>
-      <span>Se escribe diseño, se pronuncia PASIÓN</span>
-      <p class="slogan">En construcción… ¡Muy pronto online!</p>
-      <button id="toggle-mode">Cambiar modo</button>
+      <h1>PIXEL <span>Publicidad</span></h1>
+      <p class="slogan">“Se escribe diseño, se pronuncia PASIÓN”</p>
+      <button id="toggle-mode">🌙 Modo oscuro</button>
     </div>
   </header>
 
-  <section class="construction">
-    <h2>Sitio web en construcción</h2>
-    <p>Estamos trabajando para brindarte la mejor experiencia visual.</p>
-  </section>
+  <main>
+    <section class="construction">
+      <h2>🚧 Estamos construyendo algo increíble...</h2>
+      <p>Muy pronto podrás conocer todo nuestro portafolio en línea.</p>
+    </section>
 
-  <section class="services">
-    <h2>¿Qué hacemos?</h2>
-    <div class="services-grid">
-      <div class="service-card"><span>🖨️</span><p>Impresión Gran Formato</p></div>
-      <div class="service-card"><span>🎨</span><p>Branding y Asesoría Gráfica</p></div>
-      <div class="service-card"><span>🪧</span><p>Diseño de Avisos</p></div>
-      <div class="service-card"><span>📋</span><p>Diseño para Menús</p></div>
-      <div class="service-card"><span>🖼️</span><p>Fotomontajes</p></div>
-      <div class="service-card"><span>📍</span><p>Pendones y Stickers</p></div>
-    </div>
-  </section>
+    <section class="services">
+      <h2>🧩 Lo que hacemos</h2>
+      <div class="services-grid">
+        <div class="service-card"><span>🖨️</span> Impresión en gran formato</div>
+        <div class="service-card"><span>🎨</span> Branding y asesoría gráfica</div>
+        <div class="service-card"><span>📋</span> Diseño de menús y avisos</div>
+        <div class="service-card"><span>🖼️</span> Fotomontajes profesionales</div>
+        <div class="service-card"><span>🏁</span> Pendones publicitarios</div>
+        <div class="service-card"><span>🔖</span> Stickers y señalización</div>
+      </div>
+    </section>
 
-  <section class="contact">
-    <h2>Contáctanos</h2>
-    <p>📍 Cl. 42 sur #78h -16</p>
-    <p>📞 601 407 5126</p>
-    <p>📱 321 933 9525 - 321 401 3128</p>
-    <p>✉️ creativospixel@gmail.com</p>
-    <p>✉️ direccioncomercial.pixel@gmail.com</p>
-    <div class="social">
-      <a href="https://wa.me/573219339525" target="_blank"><i class="fab fa-whatsapp fa-bounce"></i></a>
-      <a href="https://www.facebook.com/PixelPublicidad" target="_blank"><i class="fab fa-facebook fa-beat"></i></a>
-      <a href="mailto:creativospixel@gmail.com"><i class="far fa-envelope fa-fade"></i></a>
-    </div>
-  </section>
+    <section class="contact">
+      <h2>📞 Contáctanos</h2>
+      <p>📍 Cl. 42 Sur #78H-16</p>
+      <p>☎️ Teléfono fijo: 601 407 5126</p>
+      <p>📱 WhatsApp: 321 933 9525 / 321 401 3128</p>
+      <p>✉️ creativospixel@gmail.com</p>
+      <p>✉️ comercialpixel@gmail.com</p>
+      <div class="social">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:creativospixel@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 PIXEL Publicidad. Todos los derechos reservados.</p>
+    © 2025 PIXEL Publicidad — Sitio en construcción
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById('toggle-mode');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
+    const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggleBtn.textContent = document.body.classList.contains("dark-mode") 
+        ? "☀️ Modo claro" 
+        : "🌙 Modo oscuro";
     });
   </script>
 </body>
