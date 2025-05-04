@@ -76,11 +76,9 @@ header {
 
 .construction {
   text-align: center;
-  margin: 2rem 0;
 }
 .construction img {
-  width: 100px;
-  margin-bottom: 1rem;
+  width: 430px;
 }
 
 .services {
