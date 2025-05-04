@@ -1,12 +1,11 @@
-/* Variables */
 :root {
   --bg: #ffffff;
   --text: #222222;
   --accent: #e6007e;
-  --subtext: #666666;
-  --card-bg: #f9f9f9;
-  --contact-bg: #fff2f8;
-  --hover-card: #ffe6f0;
+  --subtext: #555555;
+  --card-bg: #f8f8f8;
+  --contact-bg: #fff7f7;
+  --hover-scale: 1.05;
 }
 
 body.dark-mode {
@@ -16,10 +15,8 @@ body.dark-mode {
   --subtext: #bbbbbb;
   --card-bg: #1e1e1e;
   --contact-bg: #1a1a1a;
-  --hover-card: #2c2c2c;
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -30,11 +27,10 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg);
   color: var(--text);
-  line-height: 1.6;
   padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header */
 header {
   text-align: center;
   padding: 2rem 1rem;
@@ -43,8 +39,9 @@ header {
 .logo-container {
   margin-bottom: 1rem;
 }
+
 .logo-pixel {
-  width: 100px;
+  width: 120px;
   height: auto;
 }
 
@@ -54,19 +51,18 @@ header {
 }
 
 .header-content span {
-  display: block;
   font-size: 1.5rem;
+  display: block;
   color: var(--text);
 }
 
 .slogan {
+  margin-top: 0.5rem;
   font-style: italic;
   font-weight: bold;
   color: var(--subtext);
-  margin-top: 0.5rem;
 }
 
-/* Toggle Button */
 #toggle-mode {
   margin-top: 1rem;
   background: none;
@@ -74,16 +70,22 @@ header {
   color: var(--accent);
   padding: 0.5rem 1rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-/* Construction Section */
+#toggle-mode:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
 .construction {
   text-align: center;
   margin: 2rem 0;
 }
+
 .construction img {
-  width: 80px;
+  width: 100px;
   margin-bottom: 1rem;
 }
 
@@ -91,78 +93,102 @@ header {
 .services {
   margin: 2rem 0;
 }
+
 .services h2 {
-  color: var(--accent);
   text-align: center;
-  margin-bottom: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
 }
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
+
 .service-card {
   background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
+  padding: 1rem;
+  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.service-card span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 0.5rem;
+
+.service-card:hover {
+  transform: scale(var(--hover-scale));
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
+
 .service-card strong {
   display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
 }
-.service-card:hover {
-  transform: scale(1.05);
-  background-color: var(--hover-card);
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--subtext);
+}
+
+.icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  animation: floatIcon 2.5s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 /* Contact */
 .contact {
   background-color: var(--contact-bg);
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   margin-top: 2rem;
   border-radius: 12px;
-  text-align: center;
 }
+
 .contact h2 {
   color: var(--accent);
-  margin-bottom: 1rem;
+  text-align: center;
   font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
+
 .contact-details p {
-  font-size: 1.2rem;
   margin: 0.5rem 0;
+  font-size: 1.05rem;
 }
+
 .contact-details strong {
-  font-weight: bold;
+  color: var(--text);
 }
+
 .social {
   margin-top: 1rem;
+  text-align: center;
 }
+
 .social a {
+  margin: 0 10px;
+  font-size: 1.8rem;
   color: var(--accent);
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  transition: transform 0.3s;
 }
+
 .social a:hover {
+  transform: scale(1.2);
   color: var(--text);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 3rem;
-  padding: 1rem 0;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
   color: var(--subtext);
 }
